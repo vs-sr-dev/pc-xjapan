@@ -28,6 +28,28 @@ executables, no assets. You need your own original disc. The work is done
 on the Japanese release, GS-9023 V1.000 (1995-09-09), one disc, as a
 Redump-style .cue/.bin set in `iso/`.
 
+## Playing it
+
+The game runs, recompiled, on saturnkit's runtime, and it is playable
+as far as it has been played: from the boot through the opening movie,
+the title and the briefing, around the backstage, through a game over
+and on to the first item. Nobody has finished it on the port yet; a bug
+not met so far may still be waiting further on. Reports are welcome.
+
+```sh
+git clone --recursive https://github.com/vs-sr-dev/pc-xjapan.git
+cd pc-xjapan
+# put your disc's .cue and .bin files in iso/
+python -m saturnkit.disc "iso/X Japan - Virtual Shock 001 (Japan) (3M).cue" --extract build/extract
+python tools/recomp.py --build        # the program to C++, built with clang (MSYS2)
+python tools/run.py --play            # the game in a window
+```
+
+Keys: the arrows, Enter for START, Z X C for A B C, A S D for X Y Z, Q W
+for L R; F11 fullscreen, F12 a picture. A gamepad works too. Each game
+is recorded to `build/run/play-DATE-TIME.txt`; `python tools/run.py
+--input @that-file` plays it again, headless, the same way.
+
 ## Layout
 
     docs/            disc, format and code analysis, and the plan
