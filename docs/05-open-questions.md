@@ -15,9 +15,10 @@ What is not known yet, numbered so that later sessions can refer to it.
 4. **Frame pacing.** The movies run at 10 or 15 fps: paced by their sound
    (the PCM play position, as in Virtual Hydlide's movie), by a timer, or
    by VBlanks? And the program outside the movies?
-5. **Track 3 and `CDDA1`.** A 4-second sound the program never names. Is
-   it played (by track number), and when? The user can listen to
-   `build/audio/track03.wav`.
+5. **Track 3 and `CDDA1`.** A 4-second sound the program never names.
+   The user heard it: a short "bling", a confirming, positive sound. Is
+   it played (by track number), and when? The user will say when they
+   hear it in the game.
 6. **The five missing names** (`GAME.DGT`, `OVER.DGT`, `CONTINUE.DGT`,
    `BACK_CG.DGT`, `B_TACHIK.CPK`): dead code, or reachable, and what does
    the program do when a file is missing?

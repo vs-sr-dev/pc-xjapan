@@ -101,8 +101,8 @@ gives each angle about 63 KB/s and the sound about 47 KB/s, all at once.
 
 ### Track 3 and `CDDA1`
 
-Track 3 is 4.0 seconds of sound (peak −3 dB, mean −21.6 dB): not
-silence. The program never names `CDDA1`. Who plays the track, and
+Track 3 is 4.0 seconds of sound (peak −3 dB, mean −21.6 dB): to the
+user's ear a short "bling", a confirming, positive sound. The program never names `CDDA1`. Who plays the track, and
 when, is open (`05-open-questions.md`).
 
 ### What the program names

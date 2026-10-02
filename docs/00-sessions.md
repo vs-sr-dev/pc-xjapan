@@ -36,4 +36,6 @@
 * **Seen and heard by the user** in Beetle: the voices are English, the
   subtitles Japanese; the player is a photographer sent backstage to take
   pictures of the band. "Shiroi Yoru" (31 December 1994) is one of the
-  band's best-known concerts.
+  band's best-known concerts. Track 3 is a short "bling", a confirming,
+  positive sound; when the game plays it, and whether it ever shows a game
+  over or continue screen, the user will report while playing.

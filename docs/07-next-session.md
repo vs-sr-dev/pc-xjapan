@@ -37,11 +37,11 @@ formats are known, the program is mapped at a first level
 
 ## Ask the user
 
-* To listen to track 3 (`build/audio/track03.wav`, 4 seconds) and say
-  when, if ever, the game plays it.
+* When the "bling" of track 3 plays in the game (the user heard the
+  track: a short, positive sound; they will report it when they meet it).
 * What the walking controls are in Beetle, and whether the game ever
   shows a game over or continue screen (`GAME.DGT`/`OVER.DGT` are not on
-  the disc).
+  the disc); the user will report while playing.
 
 ## Keep in mind
 
