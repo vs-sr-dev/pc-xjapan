@@ -17,6 +17,17 @@ keeping.
   144×108 movies interleaved 4 sectors at a time with a stereo sound file,
   so that one pass of the drive brings all of them in step. The ISO 9660
   records describe the interleave exactly (file unit 4, gap 15).
+* **The only Japanese voice.** Turning a corner in area B, the player
+  meets a security guard who stops them, shouting in Japanese ("今、ここは
+  通れないよ", "you can't come through here now"). He is the only one
+  who speaks Japanese, and the only one without subtitles: the
+  subtitles are there to translate English for a Japanese player. The
+  camera falls, and the game over is filmed: "Will You CONTINUE? GAME
+  OVER" is part of the movie (`B_12_1.CPK`), only YES and NO are drawn by
+  the program. (The user, playing the port.) An English version would
+  need a subtitle here, where the original has none.
+* **"YOU GET!"**: the 4-second audio track, never named by the program,
+  is the jingle for finding an item (the user, playing the port).
 * **Names without files.** The program names `GAME.DGT`, `OVER.DGT`,
   `CONTINUE.DGT` (a game over and a continue screen), `BACK_CG.DGT` and
   `B_TACHIK.CPK` ("tachiiri kinshi", no entry?), none of them on the disc.

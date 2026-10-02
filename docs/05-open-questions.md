@@ -18,12 +18,19 @@ What is not known yet, numbered so that later sessions can refer to it.
    (the PCM play position, as in Virtual Hydlide's movie), by a timer, or
    by VBlanks? And the program outside the movies?
 5. **Track 3 and `CDDA1`.** A 4-second sound the program never names.
-   The user heard it: a short "bling", a confirming, positive sound. Is
-   it played (by track number), and when? The user will say when they
-   hear it in the game.
+   The user heard it: a short "bling", a confirming, positive sound.
+   **Answered by the user, playing the port (session 2):** it plays when
+   an item is found ("YOU GET!", the film). How the program asks for it
+   (a CD block play of track 3) is to be seen in the CD block's log.
 6. **The five missing names** (`GAME.DGT`, `OVER.DGT`, `CONTINUE.DGT`,
    `BACK_CG.DGT`, `B_TACHIK.CPK`): dead code, or reachable, and what does
-   the program do when a file is missing?
+   the program do when a file is missing? **Partly answered (session 2):**
+   the game over exists, but as a movie. `B_12_1.CPK` ends on "Will You
+   CONTINUE? GAME OVER" drawn into its frames (frame 95 of 103 matches
+   the user's picture of the port), with YES and NO drawn over it by the
+   program (`YES.DGT`, `NO.DGT`). The three missing pictures look like an
+   earlier design of the same screen; whether their code is reachable is
+   still open.
 7. **0x0600026C**, read in 37 places: all error exits like the one in
    `main`?
 8. **Discovery**: the four large functions at 0x0601EB08–0x0601EF72 whose
