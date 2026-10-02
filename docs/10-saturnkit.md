@@ -12,6 +12,7 @@ asked of it.
 | 1 | 2af2418 | `disc`: sectors read by disc LBA from whatever track holds them (pregaps included), MODE2/2352 user data at offset 24; ISO 9660 records' file unit size, interleave gap and XA field (attributes, file number); `--extract` follows the interleave, `--list` shows it; records of CD-DA tracks (XA attribute 0x4000, or an LBA in an audio track) listed and not extracted; an IP.BIN date written YYYY-MM-DD |
 | 2 | 835e91a | `recomp.discover`: the constant propagation follows a `jmp @rn` to a constant the descent followed, so calls through callee-saved registers in code reached that way resolve; a literal pointing at `rts; nop` is a function (a callback that does nothing) |
 | 2 | 4061b12 | runtime: TVSTAT's HBLANK bit from virtual time; the SMPC's PDR1 in direct mode (the pad's TH/TR nibbles, ID 0xB, the same state as INTBACK's); INTBACK's area code from the disc's first area symbol instead of always Europe |
+| 2 | b9cbbb8 | runtime: `--record-input FILE`, the host's pad taken once a VBlank and written as an `--input` script; `--input @FILE`. A game played in the window given back headless |
 
 Checks for 2af2418: this disc gives 270 files, the five interleaved
 ones with all 45 546 of their sectors carrying their record's XA file
@@ -43,7 +44,8 @@ Checks for 835e91a and 4061b12, on all three games:
   first corridor (`11-runtime.md`).
 
 Both ports' submodules moved to 4061b12 (Virtual Hydlide e32e6eb, Deep
-Fear bf8cb67).
+Fear bf8cb67). For b9cbbb8 (the runtime only) their headless runs were again
+byte-identical in pictures and sound; both moved to it.
 
 ## What this game will ask next
 
