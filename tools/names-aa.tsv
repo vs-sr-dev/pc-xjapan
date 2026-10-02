@@ -1,0 +1,8 @@
+# Function names for AA (loaded at 0x06010000), found by reading the code (docs/03-executables.md).
+# SBL names are SBL's documented functions that the code matches in behaviour, not symbols.
+# address	name	how it was established
+06010000	crt0	the 1st read address; sets r15, clears the BSS, copies the data, calls main
+06010128	main	crt0 calls it; the set-up, the first loads, then the game
+06019A1A	open_slot	main calls it with 0, twice; opens slot N of the tables at 0x06037E14/0x06038494 through 0x06013BB0
+06019A88	load_dgt	main calls it with OD_SHEET.DGT and NUM0_9.DGT, each twice
+06027CD0	sub_06027CD0	tail of 0x0601EB08, 0x0601EC0E, 0x0601ED60, 0x0601EF72; 34 calls to 0x0602763C

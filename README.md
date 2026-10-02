@@ -31,14 +31,15 @@ Redump-style .cue/.bin set in `iso/`.
 ## Layout
 
     docs/            disc, format and code analysis, and the plan
-    tools/           X JAPAN-specific tools: dgt.py, oracle.py
+    tools/           X JAPAN-specific tools: dgt.py, oracle.py, recomp.py, run.py, names-aa.tsv
     saturnkit/       game-agnostic Saturn toolkit (submodule)
     iso/, build/     your disc and everything derived from it (ignored by git)
 
 ## Tools
 
 The Python tools need only Python 3.8+ and no dependencies, except PIL for
-writing pictures. The oracle needs RetroArch with the Beetle Saturn core
+writing pictures. Building the recompiled C++ needs CMake, Ninja, clang and
+SDL3 (MSYS2's mingw64, found at `C:\msys64\mingw64in`). The oracle needs RetroArch with the Beetle Saturn core
 and the Japanese BIOS (`sega_101.bin`). ffmpeg reads the movies. Run
 everything from the repository root.
 
@@ -62,6 +63,13 @@ python -m saturnkit.sh2 $EXE --base 06010000 --at 06010128 --count 60      # mai
 python -m saturnkit.sh2 $EXE --base 06010000 --refs 25890000:258A0000      # the CD block
 python -m saturnkit.recomp.discover $EXE --base 06010000 --report
 
+# the program to C++, built with clang (MSYS2) and checked against the interpreter
+python tools/recomp.py --build --test
+
+# run it on saturnkit's runtime: headless to the first corridor, pictures at chosen VBlanks
+python tools/run.py -- --shot 7200,9000,10200
+python tools/run.py --play                 # a window, the keyboard or a gamepad
+
 # the oracle: Beetle Saturn in RetroArch, pressed and photographed from here
 python tools/oracle.py --at 131:START,133:START,135:START,160:shot          # to the first corridor
 ```
@@ -79,6 +87,13 @@ through the title and the briefing to the first corridor. Static
 recompilation looks like the simplest of the three ports so far
 (`docs/06-attack-plan.md`).
 
+Session 2: the program as C++ (786 functions, self-test 11 632 of 11 632
+vectors) on saturnkit's runtime, from the boot through the opening movie
+with its sound, the title and the briefing to the first backstage
+corridor. saturnkit learned to see through far jumps in discovery,
+TVSTAT's HBLANK, and the pad read directly through the SMPC's ports
+(`docs/11-runtime.md`).
+
 ## Documentation
 
 * [00-sessions.md](docs/00-sessions.md): what each session did
@@ -89,7 +104,9 @@ recompilation looks like the simplest of the three ports so far
 * [05-open-questions.md](docs/05-open-questions.md): what is not known yet
 * [06-attack-plan.md](docs/06-attack-plan.md): feasibility, what saturnkit has and lacks, the phases, what a better Virtual Shock means
 * [07-next-session.md](docs/07-next-session.md): the next session's list
+* [09-recompiler.md](docs/09-recompiler.md): the program as C++, discovery's fixes, the self-test
 * [10-saturnkit.md](docs/10-saturnkit.md): what this port gave saturnkit
+* [11-runtime.md](docs/11-runtime.md): the program on saturnkit's Saturn, how far it runs
 
 ## Licence
 

@@ -39,3 +39,25 @@
   band's best-known concerts. Track 3 is a short "bling", a confirming,
   positive sound; when the game plays it, and whether it ever shows a game
   over or continue screen, the user will report while playing.
+
+## Session 2 (2026-10-02): the recompiler, the first run, the first corridor
+
+* **Discovery's open point** (`09-recompiler.md`): the four "large
+  functions" are small ones tail-jumping into 0x06027CD0, whose 34 calls
+  through r11 saturnkit's constant propagation could not see past a
+  `jmp`. Fixed in saturnkit, with callbacks that do nothing (`rts; nop`)
+  taken as functions: 786 functions, 53 unresolved jumps instead of 164.
+* **The program as C++** (`tools/recomp.py`): 75 658 instructions, built
+  with clang; self-test 11 632 of 11 632 vectors.
+* **The first run** (`tools/run.py`, `11-runtime.md`): the recompiled
+  game boots on saturnkit's runtime, plays the opening with its sound
+  (its waveform correlates at 0.97 to 1.00 with `OPEN.CPK`'s own audio,
+  at the same level), shows the title, takes START, plays the briefing
+  and reaches the first backstage corridor at 170 s, as in Beetle.
+  saturnkit's runtime learned TVSTAT's HBLANK bit, the pad read directly
+  through PDR1 (the program never reads it by INTBACK), and the disc's
+  area code.
+* **saturnkit** 835e91a and 4061b12 (`10-saturnkit.md`), checked on
+  Virtual Hydlide (51 542 vectors, the run to the field byte-identical)
+  and Deep Fear (7 227 vectors, the run byte-identical); both ports moved
+  to them.

@@ -11,7 +11,9 @@ What is not known yet, numbered so that later sessions can refer to it.
    decode all four 144×108 movies at once, with `SOUND.CPK`? How is the
    edit recorded, and what plays at the end?
 3. **Who decodes Cinepak.** SBL's CPK library can decode on the slave
-   SH-2; the program writes SINIT in three places. Master, slave, or both?
+   SH-2; the program writes SINIT in three places. Session 2: the slave
+   is woken 1 987 times on the way to the first corridor; which part of
+   the work it does is still to be read.
 4. **Frame pacing.** The movies run at 10 or 15 fps: paced by their sound
    (the PCM play position, as in Virtual Hydlide's movie), by a timer, or
    by VBlanks? And the program outside the movies?
@@ -29,13 +31,19 @@ What is not known yet, numbered so that later sessions can refer to it.
    jump table, an interpreter, or a run of `switch` cases that discovery
    follows as one body? Two functions Ghidra finds (0x06022B7C,
    0x060315BA) are reached by nothing discovery follows.
+   **Answered in session 2** (`09-recompiler.md`): small functions
+   tail-jumping into 0x06027CD0, whose calls through r11 discovery's
+   constants did not reach; fixed in saturnkit. 0x06022B7C and
+   0x060315BA are still unreached.
 9. **How files are found**: no GFS. The CD block's own file system
    commands (0x70–0x75, which saturnkit's runtime has), or the program's
    own ISO 9660 reading?
 10. **The title's delay.** In Beetle, START on the title was taken only at
     the third press, about 5 seconds after the title appeared (at 135 s
     of the run; presses at 131 and 133 s did nothing). A delay before the
-    title takes input, or a press too short for a slow poll?
+    title takes input, or a press too short for a slow poll? Session 2:
+    on the runtime START is taken at 5 and at 10 seconds into the title
+    (VBlanks 7500 and 7800); earlier presses not tried yet.
 11. **The photographs.** Are the 144×108 `.DGT` photographs the pictures
     the player "takes", chosen by when the shutter is pressed in a movie,
     and how is a shot judged ("CHANCE!")?
