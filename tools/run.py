@@ -5,7 +5,9 @@
 
 --play opens the window (keys in saturnkit/runtime/host.cpp: arrows, Enter
 START, Z X C = A B C, A S D = X Y Z, Q W = L R; F12 saves the picture, F11
-fullscreen) with no pad script and no end. Without it the run is headless:
+fullscreen) with no pad script and no end, and records the pad to
+build/run/play-DATE-TIME.txt: `--input @that-file` plays the same game
+again, headless, to the same VBlanks. Without it the run is headless:
 it boots the disc (iso/*.cue) into the recompiled program
 (build/recomp-build, from `python tools/recomp.py --build`), with the pad
 script that reaches the first corridor: START on the title at VBlank
@@ -22,6 +24,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 from collections import defaultdict
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
@@ -82,6 +85,9 @@ def main():
     if a.play:
         if a.input is not None:
             cmd += ["--input", a.input]
+        record = os.path.join(OUT, "play-%s.txt" % time.strftime("%Y%m%d-%H%M%S"))
+        cmd += ["--record-input", record]
+        print("the pad is recorded to %s (give it back with --input @FILE)" % record)
     else:
         cmd += ["--headless", "--vblanks", str(a.vblanks)]
         script = a.input if a.input is not None else SCRIPT
