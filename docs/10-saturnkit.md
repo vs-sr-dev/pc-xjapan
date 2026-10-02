@@ -52,6 +52,6 @@ byte-identical in pictures and sound; both moved to it.
 * The runtime's CD block with five filters at once for the angles
   (`runtime/cdrom.cpp`'s boot reads assume Mode 1; reads from the XA
   track already work).
-* Perhaps CD-DA from the runtime for the first time (track 3's "bling").
+* CD-DA, if the program ever plays track 3 (the item jingle it plays from a movie instead, so far).
 * Layer 2's "Sega FILM/Cinepak" extractor, if the port wants its own
   decoder rather than the game's (ffmpeg reads them meanwhile).

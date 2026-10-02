@@ -30,8 +30,10 @@ and walking, anything wrong against Beetle.
 
 * The "Rusty Nail" editing: five interleaved streams through the CD
   block's filters at once.
-* The "bling" of track 3: watch the CD block for a play of track 3
-  (`--trace`), or the user hears it.
+* Track 3: does the program ever play it? The item jingle so far comes
+  from the pickup movie's audio; `--trace` shows any CD block Play.
+* `tools/scripts/to-first-film.txt` (the user's game, `--input @…`) as a
+  regression run: "YOU GET!" at VBlank 7760.
 * The PC gains (`06-attack-plan.md`): no waiting between steps first.
 
 ## Keep in mind
