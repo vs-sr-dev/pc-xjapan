@@ -39,7 +39,7 @@ Redump-style .cue/.bin set in `iso/`.
 
 The Python tools need only Python 3.8+ and no dependencies, except PIL for
 writing pictures. Building the recompiled C++ needs CMake, Ninja, clang and
-SDL3 (MSYS2's mingw64, found at `C:\msys64\mingw64in`). The oracle needs RetroArch with the Beetle Saturn core
+SDL3 (MSYS2's mingw64, found at `C:\msys64\mingw64\bin`). The oracle needs RetroArch with the Beetle Saturn core
 and the Japanese BIOS (`sega_101.bin`). ffmpeg reads the movies. Run
 everything from the repository root.
 
