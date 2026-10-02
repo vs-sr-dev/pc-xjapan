@@ -61,3 +61,12 @@
   Virtual Hydlide (51 542 vectors, the run to the field byte-identical)
   and Deep Fear (7 227 vectors, the run byte-identical); both ports moved
   to them.
+* **Played by the user** in the window: the title, the briefing, the
+  backstage, a game over (`B_12_1.CPK`: a security guard, the only
+  Japanese voice and the only one without subtitles), the first item
+  ("YOU GET!", the film), all "substantially perfect". The play was
+  recorded (saturnkit b9cbbb8) and given back headless
+  (`tools/scripts/to-first-film.txt`): the same route, the same game
+  over, "YOU GET!" at VBlank 7760. The item's jingle is the pickup
+  movie's own audio, not CD-DA track 3 (no Play command reaches the CD
+  block).

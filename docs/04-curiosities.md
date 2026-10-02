@@ -27,8 +27,10 @@ keeping.
   need a subtitle here, where the original has none. (Another man, with
   a badge, who blocks a passage earlier, speaks English, subtitled
   "今、ここは通れないよ", "you can't come through here now".)
-* **"YOU GET!"**: the 4-second audio track, never named by the program,
-  is the jingle for finding an item (the user, playing the port).
+* **"YOU GET!" twice.** The 4-second audio track, never named by the
+  program, is the jingle for finding an item. The game plays it from the
+  pickup movie's own 8-bit audio (`B_1_9.CPK`), not from the CD track:
+  the jingle is on the disc twice, once in CD quality, apparently unused.
 * **Names without files.** The program names `GAME.DGT`, `OVER.DGT`,
   `CONTINUE.DGT` (a game over and a continue screen), `BACK_CG.DGT` and
   `B_TACHIK.CPK` ("tachiiri kinshi", no entry?), none of them on the disc.

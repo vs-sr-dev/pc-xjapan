@@ -19,9 +19,14 @@ What is not known yet, numbered so that later sessions can refer to it.
    by VBlanks? And the program outside the movies?
 5. **Track 3 and `CDDA1`.** A 4-second sound the program never names.
    The user heard it: a short "bling", a confirming, positive sound.
-   **Answered by the user, playing the port (session 2):** it plays when
-   an item is found ("YOU GET!", the film). How the program asks for it
-   (a CD block play of track 3) is to be seen in the CD block's log.
+   The user, playing the port, heard that sound when an item is found
+   ("YOU GET!", the film). **But it is not track 3 that plays:** in the
+   same game given back headless (`tools/scripts/to-first-film.txt`) the
+   CD block gets no Play command; the sound is in the audio of the
+   pickup movie, `B_1_9.CPK` (at 0.536 s, correlation 0.973 with track
+   3), and in the run's sound at 128.67 s (0.957). Track 3 is the same
+   jingle in CD quality; whether the program ever plays it is still
+   open.
 6. **The five missing names** (`GAME.DGT`, `OVER.DGT`, `CONTINUE.DGT`,
    `BACK_CG.DGT`, `B_TACHIK.CPK`): dead code, or reachable, and what does
    the program do when a file is missing? **Partly answered (session 2):**
