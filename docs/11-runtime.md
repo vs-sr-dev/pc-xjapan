@@ -35,6 +35,18 @@ correlate at 0.974 to 1.000. The run drifts against the file by about
 PCM path, from the CD block through Sega's driver 1.27 and the SCSP, is
 right.
 
+### saturnkit bd3fd6c: VDP1's frame change (from Dragon Ball Z)
+
+saturnkit's VDP1 now changes frame at the HBlank after VBlank-OUT, as
+Mednafen does, rather than before the interrupt is taken. The program's
+handler asks for a change every field: the SEGA logo is shorter, and
+everything after it comes 4.84 s (290 VBlanks) earlier than in the table
+above, the opening playing at the same speed (its sound still matches
+`OPEN.CPK` at correlation 0.86-1.00). Against a Beetle recording, the
+opening now starts 3.56 s after the logo appears (Beetle: 3.15 s; before:
+6.4 s). The pad script presses START at 7210; the corridor comes at about
+VBlank 9900.
+
 ## What the program asked of the runtime
 
 Three things stopped it, all saturnkit's (`10-saturnkit.md`):

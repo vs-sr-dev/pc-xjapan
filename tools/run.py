@@ -11,8 +11,9 @@ again, headless, to the same VBlanks. Without it the run is headless:
 it boots the disc (iso/*.cue) into the recompiled program
 (build/recomp-build, from `python tools/recomp.py --build`), with the pad
 script that reaches the first corridor: START on the title at VBlank
-7500 (without it, the attract starts again at about 7900), the briefing,
-the corridor at about VBlank 10200. The run is deterministic
+7210, the briefing, the corridor at about VBlank 9900 (290 VBlanks
+earlier than before saturnkit bd3fd6c, whose VDP1 frame change shortened
+the SEGA logo as Beetle shows it). The run is deterministic
 (virtual time), so the same script always gets to the same place.
 
 --report prints the hardware log of the run (build/run/hw-log.txt) as
@@ -34,7 +35,7 @@ OUT = os.path.join(ROOT, "build", "run")
 MSYS = r"C:\msys64\mingw64\bin"
 
 # VBlanks (60 Hz): START on the title
-SCRIPT = "7500:START,7508:"
+SCRIPT = "7210:START,7218:"
 
 
 def report(path):
